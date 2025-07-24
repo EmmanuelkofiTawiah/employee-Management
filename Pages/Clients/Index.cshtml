@@ -1,0 +1,32 @@
+@page
+@model employee_management.Pages.Clients.IndexModel
+@{
+    ViewData["Title"] = "Clients";
+}
+<h2 class="text-2xl font-semibold mb-4">Clients</h2>
+<a asp-page="Add" class="inline-block mb-4 bg-green-600 text-white px-4 py-2 rounded">Add New Client</a>
+<table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+        <tr>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Client Code</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Client Name</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Address</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Phone</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Email</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var client in Model.ClientList)
+    {
+        <tr class="border-b">
+            <td class="px-4 py-2">@client.Code</td>
+            <td class="px-4 py-2">@client.Name</td>
+            <td class="px-4 py-2">@client.Address</td>
+            <td class="px-4 py-2">@client.Phone</td>
+            <td class="px-4 py-2">@client.Email</td>
+            <td class="px-4 py-2">@client.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+@page
+@model employee_management.Pages.Employees.IndexModel
+@{
+    ViewData["Title"] = "Employee Directory";
+}
+<h2 class="text-2xl font-semibold mb-4">Employee Directory</h2>
+<input id="emp-search" class="border rounded px-3 py-2 mb-4 w-full" placeholder="Search employees" />
+<table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+        <tr>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Name</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Department</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Status</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Role</th>
+            <th class="px-4 py-2"></th>
+        </tr>
+    </thead>
+    <tbody id="emp-table">
+    @foreach (var emp in Model.EmployeeList)
+    {
+        <tr class="border-b">
+            <td class="px-4 py-2">@emp.Name</td>
+            <td class="px-4 py-2">@emp.Department</td>
+            <td class="px-4 py-2">@emp.Status</td>
+            <td class="px-4 py-2">@emp.Role</td>
+            <td class="table-actions px-4 py-2">
+                <a asp-page="Details" asp-route-id="@emp.Id" class="text-blue-600 hover:underline">View</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+@section Scripts{
+<script>
+    const input = document.getElementById('emp-search');
+    input.addEventListener('input', function () {
+        const filter = input.value.toLowerCase();
+        document.querySelectorAll('#emp-table tr').forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
+}

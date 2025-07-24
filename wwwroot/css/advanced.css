@@ -1,0 +1,15 @@
+/* Advanced UI Styles */
+.dashboard-metric {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #6b5b95, #b8a9c9);
+    color: #fff;
+    text-align: center;
+}
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.table-actions button {
+    margin-right: 0.25rem;
+}

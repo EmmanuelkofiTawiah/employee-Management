@@ -1,0 +1,38 @@
+@page
+@model employee_management.Pages.Assets.AddModel
+@{
+    ViewData["Title"] = "Add Fixed Asset";
+}
+<h2 class="text-2xl font-semibold mb-4">Add New Fixed Asset</h2>
+<form method="post" class="space-y-4">
+    <div>
+        <label asp-for="Asset.AssetNo" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.AssetNo" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.Description" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.Description" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.Category" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.Category" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.SerialNo" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.SerialNo" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.Model" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.Model" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.ResponsibleEmployee" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.ResponsibleEmployee" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <div>
+        <label asp-for="Asset.Status" class="block font-semibold mb-1"></label>
+        <input asp-for="Asset.Status" class="border rounded px-3 py-2 w-full" />
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+    <a asp-page="Index" class="ml-2 text-gray-700 hover:underline">Cancel</a>
+</form>
