@@ -1,0 +1,133 @@
+@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_Layout"; // ensures we use the layout
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom styles */
+        .dashboard-card {
+            border-radius: 12px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gradient-to-b from-purple-600 to-blue-500 p-4 text-white">
+            <h2 class="text-xl font-semibold">Macro Code</h2>
+            <ul class="mt-6">
+                <li><a href="#" class="text-lg">Dashboard</a></li>
+                <li><a href="#" class="text-lg">Clients</a></li>
+                <li><a href="#" class="text-lg">Fixed Assets</a></li>
+                <li><a href="#" class="text-lg">HR &amp; Payroll</a></li>
+                <li><a href="#" class="text-lg">Leave Applications</a></li>
+                <li><a href="#" class="text-lg">Security</a></li>
+                <li><a href="#" class="text-lg">Administration</a></li>
+                <li><a href="#" class="text-lg">System Settings</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <h1 class="text-3xl font-bold mb-6">Employees Management System</h1>
+            <!-- Dashboard Stats -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="dashboard-card">
+                    <h3 class="text-lg">Total Orders</h3>
+                    <p class="text-2xl">8,643</p>
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full flex justify-center items-center text-white">
+                            <span class="text-xl">75%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="text-lg">Customers</h3>
+                    <p class="text-2xl">28K</p>
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex justify-center items-center text-white">
+                            <span class="text-xl">45%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="text-lg">Revenue</h3>
+                    <p class="text-2xl">$24.5K</p>
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex justify-center items-center text-white">
+                            <span class="text-xl">55%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="text-lg">Growth</h3>
+                    <p class="text-2xl">41.86%</p>
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full flex justify-center items-center text-white">
+                            <span class="text-xl">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Overview Chart -->
+            <div class="dashboard-card mb-6">
+                <h3 class="text-lg">Sales Overview</h3>
+                <canvas id="salesOverviewChart"></canvas>
+            </div>
+
+            <!-- Monthly Orders Chart -->
+            <div class="dashboard-card">
+                <h3 class="text-lg">Monthly Orders</h3>
+                <canvas id="monthlyOrdersChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sales Overview Chart
+        var ctx1 = document.getElementById('salesOverviewChart').getContext('2d');
+        var salesOverviewChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [15, 20, 30, 25, 40, 60, 55, 50, 45, 65, 55, 70],
+                    fill: true,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.4
+                }]
+            }
+        });
+
+        // Monthly Orders Chart
+        var ctx2 = document.getElementById('monthlyOrdersChart').getContext('2d');
+        var monthlyOrdersChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Orders',
+                    data: [15, 25, 35, 45, 50, 60],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
