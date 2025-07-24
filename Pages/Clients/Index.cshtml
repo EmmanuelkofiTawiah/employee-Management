@@ -1,0 +1,32 @@
+@page
+@model employee_management.Pages.Clients.IndexModel
+@{
+    ViewData["Title"] = "Clients";
+}
+<h2>Clients</h2>
+<a asp-page="Add" class="btn btn-success mb-3">Add New Client</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Client Code</th>
+            <th>Client Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var client in Model.ClientList)
+    {
+        <tr>
+            <td>@client.Code</td>
+            <td>@client.Name</td>
+            <td>@client.Address</td>
+            <td>@client.Phone</td>
+            <td>@client.Email</td>
+            <td>@client.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>
