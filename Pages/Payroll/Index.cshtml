@@ -1,0 +1,33 @@
+@page
+@model employee_management.Pages.Payroll.IndexModel
+@{
+    ViewData["Title"] = "Payroll";
+}
+<h2>Payroll Summary</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Salary</th>
+            <th>Bonuses</th>
+            <th>Deductions</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Alice Johnson</td>
+            <td>$5,000</td>
+            <td>$500</td>
+            <td>$300</td>
+            <td>$5,200</td>
+        </tr>
+        <tr>
+            <td>Bob Smith</td>
+            <td>$4,200</td>
+            <td>$250</td>
+            <td>$100</td>
+            <td>$4,350</td>
+        </tr>
+    </tbody>
+</table>

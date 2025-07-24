@@ -1,0 +1,25 @@
+@page
+@model employee_management.Pages.Employees.DetailsModel
+@{
+    ViewData["Title"] = "Employee Profile";
+}
+@if (Model.Employee == null)
+{
+    <p>Employee not found.</p>
+}
+else
+{
+    <h2>@Model.Employee.Name</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Department:</strong> @Model.Employee.Department</p>
+            <p><strong>Status:</strong> @Model.Employee.Status</p>
+            <p><strong>Role:</strong> @Model.Employee.Role</p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Email:</strong> @Model.Employee.Email</p>
+            <p><strong>Phone:</strong> @Model.Employee.Phone</p>
+        </div>
+    </div>
+    <a asp-page="Index" class="btn btn-secondary mt-3">Back to Directory</a>
+}

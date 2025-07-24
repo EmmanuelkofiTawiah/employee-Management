@@ -1,0 +1,44 @@
+@page
+@model employee_management.Pages.Employees.IndexModel
+@{
+    ViewData["Title"] = "Employee Directory";
+}
+<h2>Employee Directory</h2>
+<input id="emp-search" class="form-control mb-3" placeholder="Search employees" />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="emp-table">
+    @foreach (var emp in Model.EmployeeList)
+    {
+        <tr>
+            <td>@emp.Name</td>
+            <td>@emp.Department</td>
+            <td>@emp.Status</td>
+            <td>@emp.Role</td>
+            <td class="table-actions">
+                <a asp-page="Details" asp-route-id="@emp.Id" class="btn btn-sm btn-primary">View</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+@section Scripts{
+<script>
+    const input = document.getElementById('emp-search');
+    input.addEventListener('input', function () {
+        const filter = input.value.toLowerCase();
+        document.querySelectorAll('#emp-table tr').forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
+}
