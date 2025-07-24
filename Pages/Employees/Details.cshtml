@@ -9,17 +9,17 @@
 }
 else
 {
-    <h2>@Model.Employee.Name</h2>
-    <div class="row">
-        <div class="col-md-6">
+    <h2 class="text-2xl font-semibold mb-4">@Model.Employee.Name</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
             <p><strong>Department:</strong> @Model.Employee.Department</p>
             <p><strong>Status:</strong> @Model.Employee.Status</p>
             <p><strong>Role:</strong> @Model.Employee.Role</p>
         </div>
-        <div class="col-md-6">
+        <div>
             <p><strong>Email:</strong> @Model.Employee.Email</p>
             <p><strong>Phone:</strong> @Model.Employee.Phone</p>
         </div>
     </div>
-    <a asp-page="Index" class="btn btn-secondary mt-3">Back to Directory</a>
+    <a asp-page="Index" class="inline-block mt-4 text-blue-600 hover:underline">Back to Directory</a>
 }

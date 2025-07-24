@@ -13,11 +13,3 @@
 .table-actions button {
     margin-right: 0.25rem;
 }
-
-form .form-label {
-    font-weight: 600;
-}
-
-form .form-control {
-    border-radius: 0.25rem;
-}

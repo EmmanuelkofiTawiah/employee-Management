@@ -4,68 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - employee_management</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/advanced.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/employee_management.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Dashboard">employee_management</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Dashboard">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Employees/Index">Employees</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">Clients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Assets/Index">Fixed Assets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Leave/Index">Leave</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Payroll/Index">Payroll</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Performance/Index">Performance</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Reports/Index">Reports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <header class="bg-white shadow">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a class="text-xl font-semibold" asp-area="" asp-page="/Dashboard">employee_management</a>
+            <ul class="flex space-x-4">
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Dashboard">Dashboard</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Employees/Index">Employees</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Clients/Index">Clients</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Assets/Index">Fixed Assets</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Leave/Index">Leave</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Payroll/Index">Payroll</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Performance/Index">Performance</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Reports/Index">Reports</a></li>
+                <li><a class="text-gray-700 hover:text-blue-600" asp-area="" asp-page="/Privacy">Privacy</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="container">
+    <div class="container mx-auto p-4">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - employee_management - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="border-t text-gray-500 text-sm py-4">
+        <div class="container mx-auto px-4">
+            &copy; 2025 - employee_management - <a asp-area="" asp-page="/Privacy" class="hover:underline">Privacy</a>
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)

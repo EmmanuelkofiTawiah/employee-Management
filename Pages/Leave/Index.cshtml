@@ -3,44 +3,34 @@
 @{
     ViewData["Title"] = "Leave Requests";
 }
-<h2>Leave Requests</h2>
-<form class="mb-4">
-    <div class="row g-2">
-        <div class="col-md-4">
-            <input class="form-control" placeholder="Leave type (vacation, sick)" />
-        </div>
-        <div class="col-md-3">
-            <input type="date" class="form-control" />
-        </div>
-        <div class="col-md-3">
-            <input type="date" class="form-control" />
-        </div>
-        <div class="col-md-2">
-            <button class="btn btn-primary w-100">Submit</button>
-        </div>
-    </div>
+<h2 class="text-2xl font-semibold mb-4">Leave Requests</h2>
+<form class="mb-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+    <input class="border rounded px-3 py-2" placeholder="Leave type (vacation, sick)" />
+    <input type="date" class="border rounded px-3 py-2" />
+    <input type="date" class="border rounded px-3 py-2" />
+    <button class="bg-blue-600 text-white px-4 py-2 rounded">Submit</button>
 </form>
-<table class="table">
-    <thead>
+<table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
         <tr>
-            <th>Employee</th>
-            <th>Type</th>
-            <th>Dates</th>
-            <th>Status</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Employee</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Type</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Dates</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Status</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Alice Johnson</td>
-            <td>Vacation</td>
-            <td>2024-05-01 - 2024-05-10</td>
-            <td><span class="badge text-bg-warning">Pending</span></td>
+        <tr class="border-b">
+            <td class="px-4 py-2">Alice Johnson</td>
+            <td class="px-4 py-2">Vacation</td>
+            <td class="px-4 py-2">2024-05-01 - 2024-05-10</td>
+            <td class="px-4 py-2 text-yellow-600">Pending</td>
         </tr>
-        <tr>
-            <td>Bob Smith</td>
-            <td>Sick</td>
-            <td>2024-04-03 - 2024-04-05</td>
-            <td><span class="badge text-bg-success">Approved</span></td>
+        <tr class="border-b">
+            <td class="px-4 py-2">Bob Smith</td>
+            <td class="px-4 py-2">Sick</td>
+            <td class="px-4 py-2">2024-04-03 - 2024-04-05</td>
+            <td class="px-4 py-2 text-green-600">Approved</td>
         </tr>
     </tbody>
 </table>

@@ -3,31 +3,31 @@
 @{
     ViewData["Title"] = "Fixed Assets";
 }
-<h2>Fixed Assets</h2>
-<a asp-page="Add" class="btn btn-success mb-3">Add New Asset</a>
-<table class="table table-bordered">
-    <thead>
+<h2 class="text-2xl font-semibold mb-4">Fixed Assets</h2>
+<a asp-page="Add" class="inline-block mb-4 bg-green-600 text-white px-4 py-2 rounded">Add New Asset</a>
+<table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
         <tr>
-            <th>AssetNo</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>SerialNo</th>
-            <th>Model</th>
-            <th>Responsible Employee</th>
-            <th>Status</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">AssetNo</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Description</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Category</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">SerialNo</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Model</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Responsible Employee</th>
+            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Status</th>
         </tr>
     </thead>
     <tbody>
     @foreach (var asset in Model.AssetList)
     {
-        <tr>
-            <td>@asset.AssetNo</td>
-            <td>@asset.Description</td>
-            <td>@asset.Category</td>
-            <td>@asset.SerialNo</td>
-            <td>@asset.Model</td>
-            <td>@asset.ResponsibleEmployee</td>
-            <td>@asset.Status</td>
+        <tr class="border-b">
+            <td class="px-4 py-2">@asset.AssetNo</td>
+            <td class="px-4 py-2">@asset.Description</td>
+            <td class="px-4 py-2">@asset.Category</td>
+            <td class="px-4 py-2">@asset.SerialNo</td>
+            <td class="px-4 py-2">@asset.Model</td>
+            <td class="px-4 py-2">@asset.ResponsibleEmployee</td>
+            <td class="px-4 py-2">@asset.Status</td>
         </tr>
     }
     </tbody>
